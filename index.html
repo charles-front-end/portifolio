@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+    <title>Portfólio</title>
+  </head>
+
+  <body>
+    <div class="particulas"></div>
+    <!-- painel de navegaçao de inicio,sobre,projeto e contatos -->
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Inicio</a>
+        </li>
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+          <a href="#contatos" class="menu-link">Contatos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- cabeçalho com nome e foto de perfil -->
+    <main id="inicio" class="cabecalho">
+      <img
+        src="img/foto.jpg"
+        alt="Foto de Charles da Silva"
+        class="Foto-Perfil"
+      />
+      <h1>Charles Da Silva</h1>
+      <p class="paragrafo">Desenvolvedor Front-End</p>
+    </main>
+
+    <!-- caixa de escrita "sobre mim" e "paragrafo do texto"  -->
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="caixa-do-paragrafo">
+        <p class="caixa-paragrafo">
+          Olá sou Charles da Silva e estou me especializando na areá de
+          Front-End,<br />
+          Tenho 28 anos, Moro no Estado de São Paulo Interior.<br />
+          E na areá estou sempre procurando a melhorar.
+        </p>
+      </div>
+    </section>
+
+    <!-- caixa da escrita "meus projetos" com imagens do projeto e texto do projeto -->
+    <section id="projetos" class="projetos">
+      <h2 class="titulo-de-projetos">Meus Projetos</h2>
+      <div class="caixa-do-projetos">
+        <div class="projeto-sit">
+          <a href="https://charles-front-end.github.io/Projeto/" target="_blank">
+          <img
+            class="imagem-primaria"
+            src="img/projeto.png"
+            alt="Projeto 1"
+            class="projetos-imagem"/>
+            </a>
+          <h3 class="titulo-projetos">Landing Page Nike.</h3>
+          <p class="paragrafo-projetos">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad iste
+            voluptate, excepturi quisquam ea nobis earum itaque rem enim
+            suscipit hic cumque labore, distinctio molestias quasi repellendus,
+            dignissimos voluptas aliquam?
+          </p>
+          </a>
+        </div>
+        <div class="projeto-sit">
+          <a href="https://charles-front-end.github.io/estudo/" target="_blank">
+          <img src="img/carro.png" alt="Projeto 2" class="projetos-imagem" />
+          </a>
+          <h3 class="titulo-projetos">Formulário Venda de Veiculos.</h3>
+          <p class="paragrafo-projetos">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi
+            iusto ad tenetur doloremque, laboriosam, alias voluptatibus quisquam
+            illum, aut ipsum perferendis doloribus molestias esse iste a odit
+            voluptate. Consectetur, expedita.
+          </p>
+        </div>
+        <div class="projeto-sit">
+          <a href="https://charles-front-end.github.io/Gerando-QR-Code/" target="_blank">
+          <img src="img/qrcode.png" alt="Projeto 3" class="projetos-imagem3" />
+          </a>
+          <h3 class="titulo-projetos">Projeto QR Code.</h3>
+          <p class="paragrafo-projetos">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+            deserunt iste odio consequatur? Porro praesentium quam explicabo
+            provident odio. Sapiente sequi nobis maxime quod optio nihil id
+            dolores placeat eum?
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- caixa da escrita "contatos" com caixa de "nome" e "mensagem" -->
+    <section id="contatos" class="contatos">
+      <h2 class="titulo-do-contatos">Entre em Contatos</h2>
+      <form
+        class="formulario-contatos"
+        id="formulario"
+        onsubmit="enviarWhats(event)"
+      >
+        <div class="grupo-form">
+          <input placeholder="Nome" class="campo-form" id="nome" />
+        </div>
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Digite sua Mensagem"
+            rows="6"
+            id="mensagem"
+          ></textarea>
+        </div>
+        <button type="submit" class="botão-form">Enviar Whatsap</button>
+      </form>
+    </section>
+    <!--Javascripts-->
+    <script>
+      function enviarWhats(event) {
+        event.preventDefault()
+
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5514996739739";
+
+        const texto = `Ola! Meu nome é ${nome}, ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
