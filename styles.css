@@ -68,6 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0 1rem;
 }
 
 h1 {
@@ -75,11 +76,14 @@ h1 {
     color: var(--primaria);
     font-weight: bold;
     margin: 20px;
+    text-align: center;
 }
 
 .paragrafo {
     font-size: 2rem;
     color: #c5c3f8;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .Foto-Perfil{
@@ -183,7 +187,7 @@ h1 {
 }
 
 .contatos {
-    padding: 3rem 30rem;
+    padding: 6rem 2rem;
 }
 
 .titulo-do-contatos {
@@ -193,14 +197,14 @@ h1 {
 }
 
 .formulario-contatos {
+    max-width: 600px;
     max-height: 600px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(5px);
-    padding: 1rem;
+    padding: 2rem;
     border: 1px solid var(--vidro);
     border-radius: 10px;
-    
 }
 
 .grupo-form {
@@ -210,13 +214,13 @@ h1 {
 
 .campo-form {
     width: 100%;
-    padding: 2px;
+    padding: 0.75rem;
     border-radius: 5px;
     background: var(--escuro);
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     outline: none;
-    border: none;
-   
+    border: 1px solid var(--vidro);
+    font-size: 1rem;
 }
 
 .campo-form:focus {
@@ -227,18 +231,19 @@ h1 {
 .botão-form {
     color: var(--claro);
     background: linear-gradient(45deg, var(--primaria), var(--segundaria));
-    padding: 0.3rem 0.6rem;
+    padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: all 0.5 ease;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .botão-form:hover {
-     transform: translateY(-4px);
-     box-shadow: 0 5px rgba(79, 70, 229, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
 }
 
 .particulas {
@@ -260,5 +265,222 @@ h1 {
         transform: translateY(-20px);
     }
 }
+
+/* ========== MEDIA QUERIES - RESPONSIVIDADE ========== */
+
+/* Tablets e telas médias (até 1024px) */
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .paragrafo {
+        font-size: 1.5rem;
+    }
+    
+    .Foto-Perfil {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .sobre-titulo,
+    .titulo-de-projetos,
+    .titulo-do-contatos {
+        font-size: 2rem;
+    }
+    
+    .caixa-do-projetos {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+/* Tablets pequenos e smartphones grandes (até 768px) */
+@media screen and (max-width: 768px) {
+    .navegacao {
+        padding: 1rem;
+    }
+    
+    .menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu-link {
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .paragrafo {
+        font-size: 1.2rem;
+    }
+    
+    .Foto-Perfil {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .sobre,
+    .projetos {
+        padding: 4rem 1.5rem;
+    }
+    
+    .contatos {
+        padding: 4rem 1.5rem;
+    }
+    
+    .sobre-titulo,
+    .titulo-de-projetos,
+    .titulo-do-contatos {
+        font-size: 1.75rem;
+    }
+    
+    .caixa-do-paragrafo {
+        padding: 1.5rem;
+    }
+    
+    .caixa-do-projetos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .projeto-sit:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+    
+    .formulario-contatos {
+        padding: 1.5rem;
+    }
+}
+
+/* Smartphones (até 480px) */
+@media screen and (max-width: 480px) {
+    .navegacao {
+        padding: 0.75rem;
+    }
+    
+    .menu {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .menu-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+        margin: 15px;
+    }
+    
+    .paragrafo {
+        font-size: 1rem;
+    }
+    
+    .Foto-Perfil {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .sobre,
+    .projetos,
+    .contatos {
+        padding: 3rem 1rem;
+    }
+    
+    .sobre-titulo,
+    .titulo-de-projetos,
+    .titulo-do-contatos {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .caixa-do-paragrafo {
+        padding: 1rem;
+    }
+    
+    .caixa-paragrafo {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .caixa-do-projetos {
+        gap: 1rem;
+    }
+    
+    .projetos-imagem,
+    .projetos-imagem3,
+    .imagem-primaria {
+        height: 150px;
+    }
+    
+    .titulo-projetos {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+    }
+    
+    .paragrafo-projetos {
+        font-size: 0.9rem;
+        padding: 0 0.5rem;
+    }
+    
+    .projeto-sit:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .formulario-contatos {
+        padding: 1rem;
+    }
+    
+    .grupo-form {
+        margin-bottom: 1rem;
+        padding: 0.25rem;
+    }
+    
+    .campo-form {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .botão-form {
+        padding: 0.65rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Smartphones muito pequenos (até 360px) */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .paragrafo {
+        font-size: 0.9rem;
+    }
+    
+    .Foto-Perfil {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .menu {
+        gap: 0.75rem;
+    }
+    
+    .menu-link {
+        font-size: 0.8rem;
+    }
+    
+    .sobre-titulo,
+    .titulo-de-projetos,
+    .titulo-do-contatos {
+        font-size: 1.3rem;
+    }
+}
+
 
 
